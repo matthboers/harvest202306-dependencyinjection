@@ -1,6 +1,8 @@
-﻿namespace Exercise2.Services;
+﻿using Exercise2.Services.Logging;
 
-public class IdealPaymentService : IPaymentService
+namespace Exercise2.Services;
+
+public class IdealPaymentService(ILogger Logger) : IPaymentService
 {
     public bool ProcessPayment(decimal money)
     {
@@ -9,9 +11,9 @@ public class IdealPaymentService : IPaymentService
             throw new ArgumentException("Cannot pay less than 0 euro");
         }
 
-        Console.WriteLine("Processing payment");
+        Logger.Log("Processing payment");
         // Do payment
-        Console.WriteLine($"Payment of {money} euros has completed successfully!");
+        Logger.Log($"Payment of {money} euros has completed successfully!");
 
         return true;
     }
