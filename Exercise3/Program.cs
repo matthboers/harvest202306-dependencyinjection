@@ -22,6 +22,9 @@ internal class Program
 
         var container = services.BuildServiceProvider();
 
+        // TODO: Voeg logging toe aan de DI
+        // TODO: Maak een LoggerDecorator die een timestamp toevoegt
+
         var orderService = container.GetRequiredService<IOrderService>();
 
         orderService.PlaceOrder(Items[1]);

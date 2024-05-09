@@ -2,6 +2,8 @@
 
 public class ConsoleLogger : ILogger
 {
+    // TODO: Voeg decorators toe
+
     public void Log(string message)
     {
         var newMessage = message;

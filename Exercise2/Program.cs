@@ -12,6 +12,8 @@ internal class Program
 
     static void Main(string[] args)
     {
+        // TODO: Vervang handmatige DI met een DI Container
+
         OrderService orderServiceWithIdeal = new(new IdealPaymentService());
         orderServiceWithIdeal.PlaceOrder(Items[1]);
     }
