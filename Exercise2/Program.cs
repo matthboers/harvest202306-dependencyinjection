@@ -20,10 +20,6 @@ internal class Program
         services.AddScoped<IOrderService, OrderService>();
         services.AddScoped<IPaymentService, IdealPaymentService>();
 
-        services.AddTransient<ILogger, ConsoleLogger>();
-        services.AddSingleton<ILoggerDecorator, CounterLogger>();
-        services.AddTransient<ILoggerDecorator, TimestampLogger>();
-
         var container = services.BuildServiceProvider();
 
         var orderService = container.GetRequiredService<IOrderService>();
