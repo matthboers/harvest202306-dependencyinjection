@@ -13,8 +13,10 @@ internal class Program
 
     static void Main(string[] args)
     {
-        OrderService orderService = new();
+        OrderService orderServiceWithIdeal = new(new IdealPaymentService());
+        orderServiceWithIdeal.PlaceOrder(Items[1]);
 
-        orderService.PlaceOrder(Items[1]);
+        OrderService orderServiceWithCreditcard = new(new CreditcardPaymentService());
+        orderServiceWithCreditcard.PlaceOrder(Items[1]);
     }
 }

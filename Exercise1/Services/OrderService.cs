@@ -4,7 +4,12 @@ namespace Exercise1.Services;
 
 public class OrderService
 {
-    private readonly IdealPaymentService paymentService = new IdealPaymentService(); // TODO: Maak hier DI van
+    public IPaymentService PaymentService { get; set; }
+
+    public OrderService(IPaymentService paymentService)
+    {
+        PaymentService = paymentService;
+    }
 
     public void PlaceOrder(Item item)
     {
@@ -12,6 +17,11 @@ public class OrderService
         Console.WriteLine($"Placing order for a(n) {item.Name}");
 
         // Betaling verwerken
-        paymentService.ProcessPayment(item.Price);
+        PaymentService.ProcessPayment(item.Price);
+    }
+
+    public void SetPaymentService(IPaymentService paymentService)
+    {
+        PaymentService = paymentService;
     }
 }
