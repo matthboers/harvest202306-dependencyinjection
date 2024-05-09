@@ -1,6 +1,6 @@
 ﻿namespace Exercise2.Services.Logging;
 
-public class CounterLogger : ILoggerWrapper
+public class CounterLogger : ILoggerDecorator
 {
     readonly Dictionary<string, int> logMessageCounter = new();
 

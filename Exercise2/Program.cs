@@ -21,8 +21,8 @@ internal class Program
         services.AddScoped<IPaymentService, IdealPaymentService>();
 
         services.AddTransient<ILogger, ConsoleLogger>();
-        services.AddSingleton<ILoggerWrapper, CounterLogger>();
-        services.AddTransient<ILoggerWrapper, TimestampLogger>();
+        services.AddSingleton<ILoggerDecorator, CounterLogger>();
+        services.AddTransient<ILoggerDecorator, TimestampLogger>();
 
         var container = services.BuildServiceProvider();
 

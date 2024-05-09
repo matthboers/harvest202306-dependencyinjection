@@ -1,8 +1,6 @@
-﻿using Exercise2.Services.Logging;
+﻿namespace Exercise2.Services;
 
-namespace Exercise2.Services;
-
-public class CreditcardPaymentService(ILogger Logger) : IPaymentService
+public class CreditcardPaymentService : IPaymentService
 {
     public bool ProcessPayment(decimal money)
     {
@@ -11,9 +9,9 @@ public class CreditcardPaymentService(ILogger Logger) : IPaymentService
             throw new ArgumentException("Cannot pay less than 0 euro");
         }
 
-        Logger.Log("Sending invoice to credit card");
+        Console.WriteLine("Sending invoice to credit card");
         // Do payment
-        Logger.Log($"Invoice for {money} euros has been created successfully!");
+        Console.WriteLine($"Invoice for {money} euros has been created successfully!");
 
         return true;
     }
