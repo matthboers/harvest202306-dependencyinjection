@@ -4,7 +4,7 @@ namespace Exercise1.Services;
 
 public class OrderService
 {
-    private readonly IPaymentService paymentService = new IdealPaymentService();
+    private readonly IPaymentService paymentService = new IdealPaymentService(); // TODO: Maak hier DI van
 
     public void PlaceOrder(Item item)
     {
