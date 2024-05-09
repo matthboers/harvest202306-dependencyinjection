@@ -1,4 +1,4 @@
-﻿namespace Exercise2.Services.Logging;
+﻿namespace Exercise3.Services.Logging;
 
 public class CounterLogger : ILoggerDecorator
 {

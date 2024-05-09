@@ -1,9 +1,9 @@
-﻿using Exercise2.Domain;
-using Exercise2.Services;
-using Exercise2.Services.Logging;
+﻿using Exercise3.Domain;
+using Exercise3.Services;
+using Exercise3.Services.Logging;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Exercise2;
+namespace Exercise3;
 
 internal class Program
 {

@@ -1,4 +1,4 @@
-﻿namespace Exercise2.Services.Logging;
+﻿namespace Exercise3.Services.Logging;
 
 public class ConsoleLogger(IEnumerable<ILoggerDecorator> Wrappers) : ILogger
 {
@@ -6,9 +6,9 @@ public class ConsoleLogger(IEnumerable<ILoggerDecorator> Wrappers) : ILogger
     {
         var newMessage = message;
 
-        foreach (var wrapper in Wrappers) 
-        { 
-            newMessage = wrapper.Decorate(newMessage);    
+        foreach (var wrapper in Wrappers)
+        {
+            newMessage = wrapper.Decorate(newMessage);
         }
 
         Console.WriteLine(newMessage);
